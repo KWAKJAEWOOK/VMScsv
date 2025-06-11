@@ -51,7 +51,7 @@ bool vms_controller_load_config(const char* config_filepath, VMS_TextParamConfig
     out_config->direction_codes[3] = (int)ini_getl(dir_section, "DirCode4", 315, config_filepath);
 
     // 메시지 템플릿 로드
-    ini_gets(msg_section, "Message0", "$c00", out_config->msg_template0, sizeof(out_config->msg_template0), config_filepath);
+    ini_gets(msg_section, "Message0", "-", out_config->msg_template0, sizeof(out_config->msg_template0), config_filepath);
     ini_gets(msg_section, "Message1", "차량 접근(Speed:%.1f)", out_config->msg_template1, sizeof(out_config->msg_template1), config_filepath);
     ini_gets(msg_section, "Message2", "차량 진입", out_config->msg_template2, sizeof(out_config->msg_template2), config_filepath);
     ini_gets(msg_section, "Message3", "차량 통과 예상(Speed:%.1f)", out_config->msg_template3, sizeof(out_config->msg_template3), config_filepath);
