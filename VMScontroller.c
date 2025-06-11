@@ -30,7 +30,14 @@ bool vms_controller_load_config(const char* config_filepath, VMS_TextParamConfig
 
     // 텍스트 파라미터 로드
     ini_gets(text_section, "RST", "1", out_config->rst, sizeof(out_config->rst), config_filepath);
-    // ... (기존과 동일하게 나머지 텍스트 파라미터 로드) ...
+    ini_gets(text_section, "SPD", "3", out_config->spd, sizeof(out_config->spd), config_filepath);
+    ini_gets(text_section, "NEN", "0", out_config->nen, sizeof(out_config->nen), config_filepath);
+    ini_gets(text_section, "LNE", "1", out_config->lne, sizeof(out_config->lne), config_filepath);
+    ini_gets(text_section, "YSZ", "2", out_config->ysz, sizeof(out_config->ysz), config_filepath);
+    ini_gets(text_section, "EFF", "090009000900", out_config->eff, sizeof(out_config->eff), config_filepath);
+    ini_gets(text_section, "DLY", "3", out_config->dly, sizeof(out_config->dly), config_filepath);
+    ini_gets(text_section, "FIX", "1", out_config->fix, sizeof(out_config->fix), config_filepath);
+    ini_gets(text_section, "DEFALT_FONT", "$f00", out_config->default_font, sizeof(out_config->default_font), config_filepath);
     ini_gets(text_section, "DEFAULT_COLOR", "$c00", out_config->default_color, sizeof(out_config->default_color), config_filepath);
 
     // 기준 좌표 로드
