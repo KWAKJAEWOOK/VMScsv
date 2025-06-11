@@ -321,8 +321,8 @@ int main (int argc, char** argv)
                         }
 
                         // 전체 페이로드 생성
-                        snprintf(payload_buffer, sizeof(payload_buffer), "RST=%s,SPD=%s,TXT=%s%s%s",
-                                 config.rst, config.spd, config.default_font, config.default_color, final_text);
+                        snprintf(payload_buffer, sizeof(payload_buffer), "RST=%s,SPD=%s,NEN=%s,LNE=%s,YSZ=%s,EFF=%s,DLY=%s,FIX=%s,TXT=%s%s%s",
+                                 config.rst, config.spd, config.nen, config.lne, config.ysz, config.eff, config.dly, config.fix, config.default_font, config.default_color, final_text);
 
                         // 프로토콜 패킷으로 변환하여 전송
                         uint16_t packet_len = 0;
